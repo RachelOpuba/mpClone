@@ -8,10 +8,16 @@ import { FiArrowRight } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import MobileNav from "@/components/MobileNav";
+import { ProductNav } from "@/components/navigation/ProductNav";
+import { CompanyNav } from "@/components/navigation/CompanyNav";
+import Modal from "@/components/navigation/Modal";
+import { SelectCountry } from "@/components/navigation/SelectCountry";
 
 export default function Navbar() {
   const [activeLink, setActiveLink] = useState("business");
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   return (
     <>
       <div
@@ -19,12 +25,14 @@ export default function Navbar() {
       >
         <nav className="w-full max-w-[1320px] hidden lg:flex justify-between  mx-auto font-medium px-4">
           <div className="flex justify-center  items-center gap-3 xl:gap-4">
-            <Image
-              src={"/logo-mfb-white.svg"}
-              height={34}
-              width={137}
-              alt="Logo"
-            />
+            <Link href={"#"}>
+              <Image
+                src={"/logo-mfb-white.svg"}
+                height={34}
+                width={137}
+                alt="Logo"
+              />
+            </Link>
             <Link
               href="/"
               onClick={() => setActiveLink("business")}
@@ -50,15 +58,21 @@ export default function Navbar() {
           </div>
           <div>
             <div className="flex  items-center gap-3 xl:gap-6 text-white h-full text-sm xl:text-base">
-              <div className="flex items-center h-full gap-[6px] me-1 xl:me-3">
+              <div className="flex items-center h-full gap-[6px] me-1 xl:me-3 group ">
                 <Link href={"/products"} className="">
                   Products
                 </Link>
                 <GoChevronDown className="text-[20px]" />
+                <div className="hidden group-hover:flex  w-full absolute  left-0 top-[65px] transition ease-in duration-1000">
+                  <ProductNav />
+                </div>
               </div>
-              <div className="flex items-center h-full gap-[6px] me-1 xl:me-4">
+              <div className="flex items-center h-full gap-[6px] me-1 xl:me-4 group">
                 <Link href={"/products"}>Company</Link>
                 <GoChevronDown className="text-[20px]" />
+                <div className="hidden group-hover:flex  w-full absolute  left-0 top-[65px]">
+                  <CompanyNav />
+                </div>
               </div>
               <Link href={"/products"}>About</Link>
               <Link href={"/products"}>Contact</Link>
@@ -72,7 +86,10 @@ export default function Navbar() {
                   Sign in
                 </Button>
               </div>
-              <div className="flex items-center h-full gap-1">
+              <div
+                onClick={() => setShowModal(true)}
+                className="flex  cursor-pointer items-center h-full gap-1"
+              >
                 <Image
                   src={"/nig.svg"}
                   width={24}
@@ -162,6 +179,10 @@ export default function Navbar() {
             </div>
           </div>
         )}
+
+        <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
+          <SelectCountry onClose={() => setShowModal(false)} />
+        </Modal>
       </div>
     </>
   );

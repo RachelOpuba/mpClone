@@ -5,7 +5,7 @@ export default function Home() {
 
     <>
       <div className="">
-        <p className="text-primary-lightBlue">Hello world</p>
+        <p className="text-primary-lightBlue min-h-[600px] bg-primary-darkBlue">Hello world</p>
       </div>
     </>
    
