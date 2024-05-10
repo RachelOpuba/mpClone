@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { GoChevronDown } from "react-icons/go";
 import { Button } from "@nextui-org/react";
-import CustomCard from "./CustomCard";
+import CustomCard from "../CustomCard";
 import { MdBusiness } from "react-icons/md";
 import { FaHashtag, FaHandHoldingUsd } from "react-icons/fa";
 // import { BsCreditCard } from "react-icons/bs";
@@ -14,7 +14,7 @@ import { RiWirelessChargingFill } from "react-icons/ri";
 import { MdCreditScore } from "react-icons/md";
 import { LuBookOpenCheck } from "react-icons/lu";
 import { FaLaptopCode } from "react-icons/fa6";
-import { MobileSignin } from "./navigation/MobileSignin";
+import { MobileSignin } from "./MobileSignin";
 
 type ButtonType = "banking" | "payments" | "credits" | "management";
 const buttonData = [

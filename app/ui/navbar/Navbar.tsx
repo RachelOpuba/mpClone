@@ -7,10 +7,10 @@ import { Button } from "@nextui-org/react";
 import { FiArrowRight } from "react-icons/fi";
 import { IoMenu } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
-import MobileNav from "@/components/MobileNav";
+import MobileNav from "@/components/navigation/MobileNav";
 import { ProductNav } from "@/components/navigation/ProductNav";
 import { CompanyNav } from "@/components/navigation/CompanyNav";
-import Modal from "@/components/navigation/Modal";
+import Modal from "@/components/Modal";
 import { SelectCountry } from "@/components/navigation/SelectCountry";
 
 export default function Navbar() {
@@ -21,7 +21,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`bg-primary-darkBlue h-[140px] lg:h-[90px] w-[100vw] flex justify-center lg:items-center`}
+        className={`bg-primary-darkBlue h-[140px] lg:h-[90px] w-[100vw] flex justify-center lg:items-center fixed top-0 z-50`}
       >
         <nav className="w-full max-w-[1320px] hidden lg:flex justify-between  mx-auto font-medium px-4">
           <div className="flex justify-center  items-center gap-3 xl:gap-4">
@@ -58,19 +58,19 @@ export default function Navbar() {
           </div>
           <div>
             <div className="flex  items-center gap-3 xl:gap-6 text-white h-full text-sm xl:text-base">
-              <div className="flex items-center h-full gap-[6px] me-1 xl:me-3 group ">
+              <div className="flex items-center h-full gap-[6px] me-1 xl:me-3 group">
                 <Link href={"/products"} className="">
                   Products
                 </Link>
                 <GoChevronDown className="text-[20px]" />
-                <div className="hidden group-hover:flex  w-full absolute  left-0 top-[65px] transition ease-in duration-1000">
+                <div className="invisible group-hover:visible  w-full absolute  left-0 top-[65px] transition-opacity ease-in-out delay-100 duration-200">
                   <ProductNav />
                 </div>
               </div>
               <div className="flex items-center h-full gap-[6px] me-1 xl:me-4 group">
                 <Link href={"/products"}>Company</Link>
                 <GoChevronDown className="text-[20px]" />
-                <div className="hidden group-hover:flex  w-full absolute  left-0 top-[65px]">
+                <div className="invisible group-hover:visible w-full absolute  left-0 top-[65px] transition-opacity ease-in-out delay-100 duration-200">
                   <CompanyNav />
                 </div>
               </div>

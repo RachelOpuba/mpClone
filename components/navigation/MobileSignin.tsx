@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 import { GrLinkNext } from "react-icons/gr";
 import Image from "next/image";
 import { GoChevronDown } from "react-icons/go";
-import Modal from "./Modal";
+import Modal from "../Modal";
 import { SelectCountry } from "./SelectCountry";
 
 

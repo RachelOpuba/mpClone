@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Modal from "@/components/navigation/Modal";
+import Modal from "@/components/Modal";
 import { SelectCountry } from "@/components/navigation/SelectCountry";
 import Image from "next/image";
 import Link from "next/link";
@@ -65,7 +65,7 @@ export default function Footer() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
   return (
-    <footer className="w-[100vw] bg-[#030b1d] flex justify-center">
+    <footer className="w-full bg-[#030b1d] flex justify-center">
       <div className="w-full max-w-[1320px] px-5 py-10 flex flex-col mx-auto">
         <div className="flex flex-col">
           <div>
