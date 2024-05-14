@@ -8,7 +8,8 @@ import { IoArrowForwardSharp } from "react-icons/io5";
 export default function Hero() {
   return (
     <>
-      <main style={{clipPath: "ellipse(120% 70% at 50% 30%)"}} className="bg-primary-darkBlue pb-[150px]  xl:pb-[300px] w-full pt-[70px] lg:pt-[100px] xl:pt-[120px] ">
+    <div className="bg-[#f3f6fb] w-full">
+      <main style={{clipPath: "ellipse(120% 70% at 50% 30%)"}} className="bg-primary-darkBlue pb-[150px] lg:pb-[180px]  xl:pb-[300px] w-full pt-[70px] lg:pt-[100px] xl:pt-[120px] z-10">
         <div className=" grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] xl:grid-cols-[1fr_1.3fr]  gap-8  w-full max-w-[1320px] mx-auto px-0 md:px-4 ">
             {/* <div></div> */}
           <div className=" text-white flex flex-col items-center lg:items-start justify-center pt-[100px] ps-0  md:ps-3">
@@ -35,6 +36,7 @@ export default function Hero() {
           </div>
         </div>
       </main>
+    </div>
     </>
   );
 }

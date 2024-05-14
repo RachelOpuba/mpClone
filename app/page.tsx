@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import Image from "next/image";
+import HeroSlider from "@/components/HeroSlider";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <div className="w-full flex flex-col items-center">
         <Hero/>
+        <HeroSlider/>
       </div>
     </>
    

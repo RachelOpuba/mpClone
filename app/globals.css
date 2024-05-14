@@ -24,3 +24,8 @@ body{
 ::-webkit-scrollbar-track-piece{
     background-color: inherit;
 }
+
+.transparent-text{
+    -webkit-text-stroke: 1px #0357ee;
+    -webkit-text-fill-color: transparent;
+}
